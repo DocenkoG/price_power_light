@@ -149,6 +149,7 @@ def convert_excel2csv(cfg):
 
             if (impValues['цена1'] == '0'):                                                   # лишняя строка
                 continue
+            impValues['описание'] = impValues['описание'].encode('cp1251', errors='replace').decode('cp1251')
 
             for outColName in out_template.keys() :
                 shablon = out_template[outColName]
